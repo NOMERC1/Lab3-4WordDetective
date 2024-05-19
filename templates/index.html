@@ -65,7 +65,7 @@
 
         <div id="result" {% if file_uploaded %}class="show"{% endif %}>
             <h2>Самое часто встречаемое слово:</h2>
-            <p>{{ most_common_word }} - {{ word_counts.most_common(1)[0][1] if most_common_word }}</p>
+            <p>{{ most_common_word }} - {{ word_counts.most_common(1)[0][1] if most_common_word else "" }}</p>
         </div>
     </div>
 </body>

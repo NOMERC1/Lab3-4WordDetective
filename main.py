@@ -16,7 +16,8 @@ def index():
                 text = file.read().decode('utf-8').lower()
                 words = text.split()
                 word_counts = Counter(words)
-                most_common_word = word_counts.most_common(1)[0][0]
+                if word_counts:
+                    most_common_word = word_counts.most_common(1)[0][0]
                 file_uploaded = True
 
     return render_template('index.html', most_common_word=most_common_word,
